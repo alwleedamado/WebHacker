@@ -5,22 +5,22 @@
 
 struct Diagnostic
 {
-  std::string rule;
-  std::string message;
-  int line;
+    std::string rule;
+    std::string message;
+    int         line;
 };
 struct Report
 {
-  std::string file;
-  std::vector<Diagnostic> diagnostics;
-  int functions = 0;
-  int imports = 0;
-  nlohmann::json to_json () const;
+    std::string             file;
+    std::vector<Diagnostic> diagnostics;
+    int                     functions = 0;
+    int                     imports   = 0;
+    nlohmann::json          to_json() const;
 };
 
 class Analyzer
 {
-public:
-  Analyzer ();
-  Report analyze_source (const std::string &source, const std::string &path);
+  public:
+    Analyzer();
+    Report analyze_source(const std::string &source, const std::string &path);
 };
