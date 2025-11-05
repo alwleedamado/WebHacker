@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.16)
 project(ts_with_treesitter LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
-add_executable(WebHacker src/main.cpp)
-target_link_libraries(WebHacker PRIVATE tree-sitter-typescript)
+find_package(PkgConfig REQUIRED)
+
+add_subdirectory(core)
+add_subdirectory(gui)
+add_subdirectory(test)
+add_subdirectory(docs)
