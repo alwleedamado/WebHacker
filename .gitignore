@@ -1,4 +1,4 @@
 .idea/
 .zed/
-buildDir/
+build/
 cmake-build-*
